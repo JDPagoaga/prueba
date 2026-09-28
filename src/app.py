@@ -38,6 +38,12 @@ activities = {
         "schedule": "Mondays, Wednesdays, Fridays, 2:00 PM - 3:00 PM",
         "max_participants": 30,
         "participants": ["john@mergington.edu", "olivia@mergington.edu"]
+    },
+    "PY Class": {
+        "description": "Learn Python programming and build projects",
+        "schedule": "Wednesdays, 3:30 PM - 5:00 PM",
+        "max_participants": 15,
+        "participants": ["ava@mergington.edu"]
     }
 }
 
@@ -49,6 +55,7 @@ def root():
 
 @app.get("/activities")
 def get_activities():
+    """Return all available extracurricular activities."""
     return activities
 
 
@@ -65,3 +72,16 @@ def signup_for_activity(activity_name: str, email: str):
     # Add student
     activity["participants"].append(email)
     return {"message": f"Signed up {email} for {activity_name}"}
+
+#ejemplo 2
+#comentario que describe los datos  que se van a almacenar
+#lista de libros favoritos del usuario
+favorite_books = []
+
+# Comentario que describe una función para invertir una cadena de texto.
+def invert_string(s: str) -> str:
+    """Invierte una cadena de texto y devuelve el resultado."""
+    if not isinstance(s, str):
+        raise TypeError("s debe ser una cadena de texto")
+    return s[::-1]
+
